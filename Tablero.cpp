@@ -30,7 +30,7 @@ void Tablero::impresionMatriz(){
 	{
 		for (int j = 0; j < 11; ++j)
 		{
-			cout << "[" <<  matriz[i][j]  << "]";
+			cout << "[ " <<  matriz[i][j]  << " ]";
 		}
 		cout << endl;
 	}
@@ -99,13 +99,13 @@ char** Tablero:: movimiento(char** x, int turno){
 		impresionMatriz();
 
 		if(turno ==  0){
-			cout << "Jugador 1" << endl;
+			cout << "Jugador 1 (+)" << endl;
 		}
 		if(turno ==  1){
-			cout << "Jugador 2" << endl;
+			cout << "Jugador 2 (#)" << endl;
 		}
 		cout << endl;
-		cout << "Ingrese posicion [i] para moverse: ";
+		cout << "Ingrese posicion [i] para moverse:  ";
 		int i = 0; int j = 0;
 		cin >> i;
 		cout << endl;
@@ -116,18 +116,64 @@ char** Tablero:: movimiento(char** x, int turno){
 			cout << "El valor que ingreso se pasa de los limites de la matriz" << endl;
 		} else{
 			if(turno == 0){
+
+				if(i + 2 <= 10 && j + 2 <= 10 ){
+					if(matriz[i+2][j+2] == '+'){
+						matriz[i][j] = '+';
+					}
+				}
+				if(i + 1 <= 10 && j + 1 <= 10){
+					if(matriz[i+1][j+1] == '+' || matriz[i + 1][j + 1] == '#'){
+						matriz[i][j] = '+';
+					}
+				}
+				if(i - 2 >= 0 && j - 2 >= 0){
+					if(matriz[i - 2][j - 2] == '+'){
+						matriz[i][j] = '+';
+					}
+				}
+				if(i - 1 >= 0 && j - 1 >= 0){
+					if(matriz[i - 1][j - 1] == '+' || matriz[i - 1][j - 1] == '#'){
+						matriz[i][j] = '+';
+					}
+				}
+
+				if(i - 2 >= 0 && j + 2 <= 10){
+					if(matriz[i - 2][j + 2] == '+'){
+						matriz[i][j] = '+';
+					}
+				}
+
+				if(i - 1 >= 0 && j + 1 <= 10){
+					if(matriz[i - 1][j + 1] == '+' || matriz[i - 1][j + 1] == '#'){
+						matriz[i][j] = '+';
+					}
+				}
+
+				if(i + 2 <= 10 && j - 2 >= 0){
+					if(matriz[i + 2][j - 2] == '+'){
+						matriz[i][j] = '+';
+					}
+				}
+
+				if(i + 1 <= 10 && j - 1 >= 0){
+					if(matriz[i + 1][j - 1] == '+' || matriz[i + 1][j - 1] == '#'){
+						matriz[i][j] = '+';
+					}
+				}
+
 				if(i + 2 <= 10){
 					if(matriz[i+2][j] == '+'){
 						matriz[i][j] = '+';
 					}
 				} 
 				if (i + 1 <= 10){
-					if(matriz[i + 1][j] == '+'){
+					if(matriz[i + 1][j] == '+' || matriz[i + 1][j] == '#'){
 						matriz[i][j] = '+';
 					}
 				} 
 				if(i - 1 >= 0){
-					if(matriz[i - 1][j] == '+'){
+					if(matriz[i - 1][j] == '+' || matriz[i - 1][j] == '#'){
 						matriz[i][j] = '+';
 					}
 				} 
@@ -142,12 +188,12 @@ char** Tablero:: movimiento(char** x, int turno){
 					}
 				} 
 				if (j + 1 <= 10){
-					if(matriz[i][j + 1] == '+'){
+					if(matriz[i][j + 1] == '+' || matriz[i][j + 1] == '#'){
 						matriz[i][j] = '+';
 					}
 				} 
 				if(j - 1 >= 0){
-					if(matriz[i][j - 1] == '+'){
+					if(matriz[i][j - 1] == '+' || matriz[i][j-1] == '#'){
 						matriz[i][j] = '+';
 					}
 				} 
@@ -156,24 +202,71 @@ char** Tablero:: movimiento(char** x, int turno){
 						matriz[i][j] = '+';
 					}
 				}
+
 				cout << endl << endl;
 				impresionMatriz();
 				turno = 1;
 				return movimiento(matriz, turno);
 
 			} else if(turno == 1){
+				
+				if(i + 2 <= 10 && j + 2 <= 10 ){
+					if(matriz[i+2][j+2] == '#'){
+						matriz[i][j] = '#';
+					}
+				}
+				if(i + 1 <= 10 && j + 1 <= 10){
+					if(matriz[i+1][j+1] == '#' || matriz[i + 1][j + 1] == '+'){
+						matriz[i][j] = '#';
+					}
+				}
+				if(i - 2 >= 0 && j - 2 >= 0){
+					if(matriz[i - 2][j - 2] == '#'){
+						matriz[i][j] = '#';
+					}
+				}
+				if(i - 1 >= 0 && j - 1 >= 0){
+					if(matriz[i - 1][j - 1] == '#' || matriz[i - 1][j - 1] == '#'){
+						matriz[i][j] = '#';
+					}
+				}
+
+				if(i - 2 >= 0 && j + 2 <= 10){
+					if(matriz[i - 2][j + 2] == '#'){
+						matriz[i][j] = '#';
+					}
+				}
+
+				if(i - 1 >= 0 && j + 1 <= 10){
+					if(matriz[i - 1][j + 1] == '#' || matriz[i - 1][j + 1] == '+'){
+						matriz[i][j] = '#';
+					}
+				}
+
+				if(i + 2 <= 10 && j - 2 >= 0){
+					if(matriz[i + 2][j - 2] == '#'){
+						matriz[i][j] = '#';
+					}
+				}
+
+				if(i + 1 <= 10 && j - 1 >= 0){
+					if(matriz[i + 1][j - 1] == '#' || matriz[i + 1][j - 1] == '+'){
+						matriz[i][j] = '#';
+					}
+				}
+
 				if(i + 2 <= 10){
 					if(matriz[i+2][j] == '#'){
 						matriz[i][j] = '#';
 					}
 				} 
 				if (i + 1 <= 10){
-					if(matriz[i + 1][j] == '#'){
+					if(matriz[i + 1][j] == '#' || matriz[i + 1][j] == '+'){
 						matriz[i][j] = '#';
 					}
 				} 
 				if(i - 1 >= 0){
-					if(matriz[i - 1][j] == '#'){
+					if(matriz[i - 1][j] == '#' || matriz[i - 1][j] == '+'){
 						matriz[i][j] = '#';
 					}
 				} 
@@ -188,12 +281,12 @@ char** Tablero:: movimiento(char** x, int turno){
 					}
 				} 
 				if (j + 1 <= 10){
-					if(matriz[i][j + 1] == '#'){
+					if(matriz[i][j + 1] == '#' || matriz[i][j + 1] == '+'){
 						matriz[i][j] = '#';
 					}
 				} 
 				if(j - 1 >= 0){
-					if(matriz[i][j - 1] == '#'){
+					if(matriz[i][j - 1] == '#' || matriz[i][j-1] == '+'){
 						matriz[i][j] = '#';
 					}
 				} 
