@@ -81,7 +81,7 @@ int Tablero::siGanoAlguien(){
 	2 -> jugador 1 gano
 	1 -> jugador 2 gano
 	0 -> nadie ha ganado
-	3 -> empatee
+	3 -> empate
 	*/
 	if(contadorjug1 == 0){
 		return 2;
@@ -100,8 +100,6 @@ int Tablero::siGanoAlguien(){
 		return 0;
 	}
 }
-
-
 char** Tablero:: movimiento(char** x, int turno){
 
 	int personaquegano = siGanoAlguien();
@@ -389,6 +387,11 @@ char** Tablero:: movimiento(char** x, int turno){
 		cout << endl << "Ha quedado en empate!";
 	}
 }
+
+
+
+
+
 				
 
 
