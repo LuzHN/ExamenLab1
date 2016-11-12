@@ -39,7 +39,12 @@ void Tablero::impresionMatriz(){
 	{
 		for (int j = 0; j < 11; ++j)
 		{
-			cout << "[" <<  matriz[i][j]  << "]   ";
+			if(matriz[i][j] == '#' || matriz[i][j] == '+'){
+				cout << "[" <<  matriz[i][j]  << "]";
+			}else{
+				cout << "[ ]";
+			}
+			
 		}
 		cout << endl;
 	}
