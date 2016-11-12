@@ -371,12 +371,10 @@ char** Tablero:: movimiento(char** x, int turno){
 						matriz[i][j] = '#';
 					}
 				}
-
 				cout << endl << endl;
 				impresionMatriz();
 				turno = 0;
 				return movimiento(matriz, turno);
-
 			}
 		}
 	}else if(personaquegano == 1){
@@ -387,6 +385,7 @@ char** Tablero:: movimiento(char** x, int turno){
 		cout << endl << "Ha quedado en empate!";
 	}
 }
+
 
 
 
