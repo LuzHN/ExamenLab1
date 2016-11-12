@@ -25,7 +25,6 @@ Tablero::Tablero(){
 	
 	
 }
-
 Tablero::~Tablero(){
 	for (int i = 0; i < 11; ++i)
 	{
@@ -33,7 +32,6 @@ Tablero::~Tablero(){
 		matriz[i] = NULL;
 	}
 }
-
 void Tablero::impresionMatriz(){
 	for (int i = 0; i < 11; ++i)
 	{
@@ -83,9 +81,8 @@ int Tablero::siGanoAlguien(){
 	2 -> jugador 1 gano
 	1 -> jugador 2 gano
 	0 -> nadie ha ganado
-	3 -> empate
+	3 -> empatee
 	*/
-
 	if(contadorjug1 == 0){
 		return 2;
 	} 
