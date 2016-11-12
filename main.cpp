@@ -7,7 +7,7 @@ int main(){
 
 	Tablero* tab = new Tablero();
 
-
+	delete tab;
 
 	
 

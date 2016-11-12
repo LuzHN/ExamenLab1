@@ -14,6 +14,7 @@ class Tablero {
 		char** movimiento(char**, int);
 
 		Tablero();
+		~Tablero();
 
 		int siGanoAlguien();
 
